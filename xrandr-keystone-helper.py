@@ -41,18 +41,18 @@ plt.subplots_adjust(bottom=0.35, top=0.76)
 #     A=0   B=1366
 
 global mon
-mon = "eDP1"
+mon = "HDMI-2"
 global A
 global B
 global C
 global D
 # x
 A = 0
-B = 1366
+B = 3840
 w = B-A
 
 # y
-C = 768
+C = 2160
 D = 0
 H = C-D
 
@@ -86,14 +86,14 @@ ax2y = plt.axes([0.65, 0.14, 0.25, 0.03], facecolor=axcolor)
 ax3x = plt.axes([0.05, 0.18, 0.25, 0.03], facecolor=axcolor)
 ax3y = plt.axes([0.05, 0.14, 0.25, 0.03], facecolor=axcolor)
 
-s0x = Slider(ax0x, 'q0x', -2000,  2000, valinit=q0x)
-s0y = Slider(ax0y, 'q0y', -2000,  2000, valinit=q0y)
-s1x = Slider(ax1x, 'q1x', -2000,  2000, valinit=q1x)
-s1y = Slider(ax1y, 'q1y', -2000,  2000, valinit=q1y)
-s2x = Slider(ax2x, 'q2x', -2000,  2000, valinit=q2x)
-s2y = Slider(ax2y, 'q2y', -2000,  2000, valinit=q2y)
-s3x = Slider(ax3x, 'q3x', -2000,  2000, valinit=q3x)
-s3y = Slider(ax3y, 'q3y', -2000,  2000, valinit=q3y)
+s0x = Slider(ax0x, 'q0x', -4000,  4000, valinit=q0x)
+s0y = Slider(ax0y, 'q0y', -4000,  4000, valinit=q0y)
+s1x = Slider(ax1x, 'q1x', -4000,  4000, valinit=q1x)
+s1y = Slider(ax1y, 'q1y', -4000,  4000, valinit=q1y)
+s2x = Slider(ax2x, 'q2x', -4000,  4000, valinit=q2x)
+s2y = Slider(ax2y, 'q2y', -4000,  4000, valinit=q2y)
+s3x = Slider(ax3x, 'q3x', -4000,  4000, valinit=q3x)
+s3y = Slider(ax3y, 'q3y', -4000,  4000, valinit=q3y)
 
 
 def update(val):
