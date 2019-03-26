@@ -184,10 +184,30 @@ s3y.on_changed(update)
 
 resetax = plt.axes([0.8, 0.025, 0.1, 0.04])
 resetbutton = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')
-applyax = plt.axes([0.2, 0.025, 0.1, 0.04])
+applyax = plt.axes([0.4, 0.025, 0.1, 0.04])
 applybutton = Button(applyax, 'Apply', color=axcolor, hovercolor='0.975')
-testax = plt.axes([0.5-0.02, 0.025, 0.1, 0.04])
+testax = plt.axes([0.6, 0.025, 0.1, 0.04])
 testbutton = Button(testax, 'Test', color=axcolor, hovercolor='0.975')
+
+
+video1ax = plt.axes([0.02, 0.025, 0.1, 0.04])
+video1button = Button(video1ax, 'HDMI-2', color=axcolor, hovercolor='0.975')
+
+video2ax = plt.axes([0.14, 0.025, 0.1, 0.04])
+video2button = Button(video2ax, 'HDMI-3', color=axcolor, hovercolor='0.975')
+
+def setVideo1(event):
+    mon = "HDMI-2"
+
+def setVideo2(event):
+    mon = "HDMI-3"
+
+video1button.on_clicked(setVideo1)
+video2button.on_clicked(setVideo2)
+
+
+
+
 
 
 def reset(event):
