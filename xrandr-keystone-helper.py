@@ -46,6 +46,10 @@ global A
 global B
 global C
 global D
+global range
+
+range = 200
+
 # x
 A = 0
 B = 3840
@@ -73,27 +77,28 @@ y1 = np.array([q0y, q1y, q2y, q3y, q0y])
 
 l, = plt.plot(x1, y1, lw=2, color='red')
 lm, = plt.plot(x, y, lw=1, color='green')
-plt.axis([A-w/2, B+w/2, (C+H/2), (D-H/2)])
+plt.axis([A-w/30, B+w/30, (C+H/30), (D-H/30)])
 
+plt.tight_layout()
 axcolor = 'lightgoldenrodyellow'
 
-ax0x = plt.axes([0.05, 0.90, 0.25, 0.03], facecolor=axcolor)
-ax0y = plt.axes([0.05, 0.86, 0.25, 0.03], facecolor=axcolor)
-ax1x = plt.axes([0.65, 0.90, 0.25, 0.03], facecolor=axcolor)
-ax1y = plt.axes([0.65, 0.86, 0.25, 0.03], facecolor=axcolor)
-ax2x = plt.axes([0.65, 0.18, 0.25, 0.03], facecolor=axcolor)
-ax2y = plt.axes([0.65, 0.14, 0.25, 0.03], facecolor=axcolor)
-ax3x = plt.axes([0.05, 0.18, 0.25, 0.03], facecolor=axcolor)
-ax3y = plt.axes([0.05, 0.14, 0.25, 0.03], facecolor=axcolor)
+ax0x = plt.axes([0.2, 0.70, 0.25, 0.03], facecolor=axcolor)
+ax0y = plt.axes([0.2, 0.66, 0.25, 0.03], facecolor=axcolor)
+ax1x = plt.axes([0.6, 0.70, 0.25, 0.03], facecolor=axcolor)
+ax1y = plt.axes([0.6, 0.66, 0.25, 0.03], facecolor=axcolor)
+ax2x = plt.axes([0.6, 0.38, 0.25, 0.03], facecolor=axcolor)
+ax2y = plt.axes([0.6, 0.34, 0.25, 0.03], facecolor=axcolor)
+ax3x = plt.axes([0.2, 0.38, 0.25, 0.03], facecolor=axcolor)
+ax3y = plt.axes([0.2, 0.34, 0.25, 0.03], facecolor=axcolor)
 
-s0x = Slider(ax0x, 'q0x', 0,  200, valinit=q0x)
-s0y = Slider(ax0y, 'q0y', 0,  200, valinit=q0y)
-s1x = Slider(ax1x, 'q1x', 0,  B-200, valinit=q1x)
-s1y = Slider(ax1y, 'q1y', 0,  200, valinit=q1y)
-s2x = Slider(ax2x, 'q2x', 0,  B-200, valinit=q2x)
-s2y = Slider(ax2y, 'q2y', 0,  C-200, valinit=q2y)
-s3x = Slider(ax3x, 'q3x', 0,  200, valinit=q3x)
-s3y = Slider(ax3y, 'q3y', 0,  C-200, valinit=q3y)
+s0x = Slider(ax0x, 'q0x', 0,  range, valinit=q0x)
+s0y = Slider(ax0y, 'q0y', 0,  range, valinit=q0y)
+s1x = Slider(ax1x, 'q1x', B-range,  B, valinit=q1x)
+s1y = Slider(ax1y, 'q1y', 0,  range, valinit=q1y)
+s2x = Slider(ax2x, 'q2x', B-range,  B, valinit=q2x)
+s2y = Slider(ax2y, 'q2y', C-range,  C, valinit=q2y)
+s3x = Slider(ax3x, 'q3x', 0,  range, valinit=q3x)
+s3y = Slider(ax3y, 'q3y', C-range,  C, valinit=q3y)
 
 
 def update(val):
@@ -202,7 +207,7 @@ def applyx(event):
 
 def test(event):
     call(['xrandr', '--output', mon, '--transform', '%f,%f,%f,%f,%f,%f,%f,%f,%f' % (m00,m01,m02,m10,m11,m12,m20,m21,m22)])
-    time.sleep(5)
+    time.sleep(8)
     call(['xrandr', '--output', mon, '--transform', '1,0,0,0,1,0,0,0,1'])
 
 
