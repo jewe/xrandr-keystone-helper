@@ -197,10 +197,14 @@ video2ax = plt.axes([0.14, 0.025, 0.1, 0.04])
 video2button = Button(video2ax, 'HDMI-3', color=axcolor, hovercolor='0.975')
 
 def setVideo1(event):
+    global mon
     mon = "HDMI-2"
+    print(mon)
 
 def setVideo2(event):
+    global mon
     mon = "HDMI-3"
+    print(mon)
 
 video1button.on_clicked(setVideo1)
 video2button.on_clicked(setVideo2)
